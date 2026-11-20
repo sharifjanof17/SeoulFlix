@@ -13,7 +13,10 @@ const VideoPlayer = ({ src }) => {
         playerRef.current = videojs(videoRef.current, {
             controls: true,
             autoplay: false,
-            preload: "auto",
+            // "none" = foydalanuvchi "Play" bosmaguncha hech narsa yuklanmaydi.
+            // Bu Bunny trafik (bandwidth) xarajatini sezilarli kamaytiradi, chunki
+            // epizodni ochib ko'rmasdan chiqib ketganlar uchun GB sarflanmaydi.
+            preload: "none",
             fluid: true,
             playbackRates: [0.5, 1, 1.25, 1.5, 2],
         });

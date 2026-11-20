@@ -1,0 +1,323 @@
+/* SeoulFlix — tanishtiruv sahifasi. Ranglar eski seoulflix.org saytidan.
+   Barcha klasslar "sfi-" bilan boshlanadi: eski stillar bilan to'qnashmasligi uchun. */
+
+.sfi-page {
+    --sfi-bg: #1b1b1b;
+    /* sahifa foni */
+    --sfi-bar: #262626;
+    /* yuqori panel */
+    --sfi-panel: #141414;
+    /* kontent paneli */
+    --sfi-line: #333333;
+    --sfi-red: #d7312b;
+    /* SeoulFlix qizili */
+    --sfi-red-hover: #ec4038;
+    --sfi-white: #ffffff;
+    --sfi-muted: #b5b5b5;
+
+    min-height: 100vh;
+    margin: 0;
+    background: var(--sfi-bg);
+    color: var(--sfi-white);
+    font-family: "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    text-align: left;
+    -webkit-font-smoothing: antialiased;
+}
+
+.sfi-page *,
+.sfi-page *::before,
+.sfi-page *::after {
+    box-sizing: border-box;
+}
+
+.sfi-page :focus-visible {
+    outline: 3px solid var(--sfi-white);
+    outline-offset: 3px;
+}
+
+/* ── Yuqori panel ── */
+.sfi-header {
+    background: var(--sfi-bar);
+    border-bottom: 1px solid var(--sfi-line);
+    padding: 14px 24px;
+}
+
+.sfi-logo {
+    display: block;
+    height: 56px;
+    width: auto;
+    max-width: 200px;
+    object-fit: contain;
+}
+
+/* ── Hero ── */
+.sfi-hero {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 56px 24px 24px;
+    display: grid;
+    gap: 40px;
+    align-items: center;
+}
+
+.sfi-hero h1 {
+    margin: 0;
+    max-width: 14ch;
+    font-weight: 800;
+    font-size: clamp(40px, 7vw, 76px);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+}
+
+.sfi-lead {
+    margin: 20px 0 0;
+    max-width: 48ch;
+    font-size: 19px;
+    color: var(--sfi-muted);
+}
+
+.sfi-btn {
+    margin-top: 32px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 56px;
+    padding: 0 30px;
+    border-radius: 12px;
+    background: var(--sfi-red);
+    color: var(--sfi-white);
+    font-weight: 700;
+    font-size: 18px;
+    text-decoration: none;
+    box-shadow: 0 10px 30px -10px rgba(215, 49, 43, 0.7);
+    transition: background-color 0.15s ease;
+}
+
+.sfi-page .sfi-btn:hover {
+    background: var(--sfi-red-hover);
+}
+
+.sfi-icon {
+    width: 22px;
+    height: 22px;
+    flex: none;
+}
+
+/* Posterlar: eski saytdagi qizil ramkali kartalar uslubida */
+.sfi-posters {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+.sfi-poster {
+    position: relative;
+    aspect-ratio: 2 / 3;
+    border: 2px solid var(--sfi-red);
+    border-radius: 14px;
+    overflow: hidden;
+    background: var(--sfi-panel);
+}
+
+.sfi-poster:nth-child(2) {
+    transform: translateY(-18px);
+}
+
+.sfi-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.sfi-poster-title {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 36px 10px 12px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.25;
+    text-align: center;
+}
+
+/* ── Bo'limlar (eski saytdagi qizil chiziqli sarlavha) ── */
+.sfi-section {
+    max-width: 1120px;
+    margin: 48px auto 0;
+    padding: 40px 24px;
+    background: var(--sfi-panel);
+    border-radius: 16px;
+}
+
+.sfi-heading {
+    margin: 0 0 28px;
+    padding-left: 18px;
+    border-left: 6px solid var(--sfi-red);
+    font-weight: 800;
+    font-size: clamp(28px, 4vw, 40px);
+    line-height: 1.15;
+}
+
+.sfi-about {
+    display: grid;
+    gap: 28px;
+}
+
+.sfi-about-item h3 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 1.35;
+}
+
+.sfi-about-item p {
+    margin: 6px 0 0;
+    color: var(--sfi-muted);
+}
+
+/* Havolalar */
+.sfi-links {
+    display: grid;
+    gap: 12px;
+}
+
+.sfi-page .sfi-link {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 20px;
+    border: 1px solid var(--sfi-line);
+    border-radius: 12px;
+    background: var(--sfi-bar);
+    color: var(--sfi-white);
+    text-decoration: none;
+    transition: border-color 0.15s ease;
+}
+
+.sfi-page .sfi-link:hover {
+    border-color: var(--sfi-red);
+}
+
+.sfi-page .sfi-link-primary {
+    background: var(--sfi-red);
+    border-color: var(--sfi-red);
+}
+
+.sfi-page .sfi-link-primary:hover {
+    background: var(--sfi-red-hover);
+    border-color: var(--sfi-red-hover);
+}
+
+.sfi-link-icon {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    flex: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.sfi-link-primary .sfi-link-icon {
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.sfi-link-text {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.sfi-link-title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.3;
+}
+
+.sfi-link-handle {
+    font-size: 15px;
+    color: var(--sfi-muted);
+    overflow-wrap: anywhere;
+}
+
+.sfi-link-primary .sfi-link-handle {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* ── Footer ── */
+.sfi-footer {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 40px 24px 48px;
+    font-size: 14px;
+    color: var(--sfi-muted);
+}
+
+.sfi-footer p {
+    margin: 0;
+}
+
+/* ── Katta ekranlar ── */
+@media (min-width: 860px) {
+    .sfi-hero {
+        grid-template-columns: 1.1fr 1fr;
+        gap: 56px;
+        padding-top: 80px;
+    }
+
+    .sfi-section {
+        padding: 48px;
+    }
+
+    .sfi-about {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+    }
+
+    .sfi-links {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ── Telefon ── */
+@media (max-width: 520px) {
+    .sfi-hero {
+        padding-top: 36px;
+    }
+
+    .sfi-btn {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .sfi-section {
+        margin-top: 32px;
+        border-radius: 0;
+    }
+
+    .sfi-poster:nth-child(2) {
+        transform: none;
+    }
+
+    .sfi-poster-title {
+        font-size: 12px;
+        padding: 28px 6px 8px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .sfi-btn,
+    .sfi-link {
+        transition: none;
+    }
+}
